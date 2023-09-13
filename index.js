@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    console.log(req.connection.remoteAddress)
+    console.log((req.connection.remoteAddress).split(":").pop())
   res.send('Hello World from Polska NodeJS Server')
 })
 

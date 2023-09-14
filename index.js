@@ -7,7 +7,6 @@ const geoip = require('geoip-lite')
 
 const msg = (ip) =>{
     const loc = geoip.lookup(ip)
-    console.log(loc)
     return `
     <h1>Your IP: ${ip}</h1>
     <h1>Your location:</h1>

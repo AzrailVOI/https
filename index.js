@@ -10,7 +10,9 @@ const msg = (ip) =>{
     console.log(loc)
     return `
     <h1>Your IP: ${ip}</h1>
-    <h1>Your location:\n Country: ${loc.country}\n City: ${loc.city}</h1>
+    <h1>Your location</h1>:
+    <p>Country: ${loc.country}</p> 
+    <p>City: ${loc.city}</p>
     `
 }
 

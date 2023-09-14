@@ -4,6 +4,13 @@ const port = 3000
 const fs = require('fs');
 const https = require("https")
 
+const msg = (ip, loc) =>{
+    return `
+    <h1>Your IP: ${ip}</h1>
+    <h1>Your location: ${loc}</h1>
+    `
+}
+
 app.get('/', (req, res) => {
     const ip = (req.connection.remoteAddress).split(":").pop().toString()
     console.log(ip)

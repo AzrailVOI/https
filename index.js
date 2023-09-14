@@ -3,18 +3,21 @@ const app = express()
 const port = 3000
 const fs = require('fs');
 const https = require("https")
+const geoip = require('geoip-lite')
 
-const msg = (ip, loc) =>{
+const msg = (ip) =>{
+    const loc = geoip.lookup(ip)
+    console.log(loc)
     return `
     <h1>Your IP: ${ip}</h1>
-    <h1>Your location: ${loc}</h1>
+    <h1>Your location:\n Country: ${loc.country}\n City: ${loc.city}</h1>
     `
 }
 
 app.get('/', (req, res) => {
     const ip = (req.connection.remoteAddress).split(":").pop().toString()
     console.log(ip)
-  res.send(`<h1>Your IP: ${ip}</h1>`)
+  res.send(msg(ip))
 })
 
 /*app.listen(port, () => {

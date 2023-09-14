@@ -7,7 +7,7 @@ const https = require("https")
 app.get('/', (req, res) => {
     const ip = (req.connection.remoteAddress).split(":").pop().toString()
     console.log(ip)
-  res.send('Your IP: ', ip)
+  res.send(`Your IP: ${ip}`)
 })
 
 /*app.listen(port, () => {
